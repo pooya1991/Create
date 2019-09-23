@@ -20,7 +20,3 @@ private <- user[["is_private"]]
 picURL <- user[["profile_pic_url"]]
 picUrlHD <- user[["profile_pic_url_hd"]]
 
-
-
-
-user_media <- getUserMedia(username , token)
