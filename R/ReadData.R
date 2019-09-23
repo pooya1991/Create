@@ -1,6 +1,8 @@
 library(rjson)
 library(instaR)
 library(httr)
+library(bitops)
+library(RCurl)
 json_file <- "https://www.instagram.com/creatorden/?__a=1"
 json_data <- fromJSON(paste(readLines(json_file), collapse=""))
 user <- json_data$graphql$user
