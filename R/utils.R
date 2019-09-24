@@ -21,3 +21,13 @@ parser_followers <- function(json) {
 }
 
 
+
+
+# time out handler --------------------------------------------------------
+
+time_out_handler <- function(time, func, args) {
+  Sys.sleep(time)
+  command_args <- paste(args, collapse = ", ")
+  command_text <- paste0(func, "(", command_args, ")")
+  res <- eval(command_text)
+}
