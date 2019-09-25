@@ -34,6 +34,9 @@ get_user_profile <- function(username) {
   } else {
     business_category <- NA
   }
+  if(is.null(business_category)) {
+    business_category <- NA
+  }
   is_joined_recently <- user$is_joined_recently
   is_private <- user$is_private
   is_verified <- user$is_verified
