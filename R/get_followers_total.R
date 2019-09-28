@@ -1,3 +1,5 @@
+source("R/get_followers.R")
+
 get_followers_total <- function(id) {
   k <- 1
   t <- 0
@@ -12,10 +14,10 @@ get_followers_total <- function(id) {
     if(is.null(res$followers_df)) {
       k <- k + 1
     } else {
-      k <- k + length(res$followers_df)
+      k <- k + nrow(res$followers_df)
     }
     t <- t + 1
-    followers[[t]] <- cc$followers_df
+    followers[[t]] <- res$followers_df
     if(t %% 900 == 0) {
       Sys.sleep(900)
     }

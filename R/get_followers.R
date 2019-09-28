@@ -10,9 +10,9 @@ get_followers <- function(id, after, k) {
                          `x-requested-with` = "XMLHttpRequest")
   
   if(k > 1) {
-    base_url <- "https://www.instagram.com/graphql/query/?query_hash=c76146de99bb02f6415203be841dd25a&variables=%7B%22id%22%3A%22"
-    rest_url <- "%22%2C%22include_reel%22%3Atrue%2C%22fetch_mutual%22%3Afalse%2C%22first%22%3A50%2C%22after%22%3A%22"
-    last_url <- "%3D%3D%22%7D"
+    base_url <- 'https://www.instagram.com/graphql/query/?query_hash=c76146de99bb02f6415203be841dd25a&variables=%7B\"id\"%3A\"'
+    rest_url <- '\"%2C\"include_reel\"%3Atrue%2C\"fetch_mutual\"%3Afalse%2C\"first\"%3A12%2C\"after\"%3A\"'
+    last_url <- '\"%7D'
     
     url <- paste0(base_url, id, rest_url, after, last_url)
   } else {
@@ -21,7 +21,6 @@ get_followers <- function(id, after, k) {
     
     url <- paste0(base_url, id, last_url)
   }
-  
   
   req_result <- GET(url, headers)
   req_content <- content(req_result)
