@@ -1,12 +1,16 @@
 source("R/get_followers.R")
 
 get_followers_total <- function(id) {
+  
+  # Initializing the values
   k <- 0
   t <- 0
   n_followers <- 2
   end_cursor <- NULL
   cursors <- vector()
   followers <- list()
+  
+  # 
   while(k < n_followers) {
     res <- get_followers(id = id, after = end_cursor, k = k)
     if(is.null(res$followers_df)) {
