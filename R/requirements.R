@@ -1,0 +1,5 @@
+install.packages("dplyr")
+install.packages("tidyr")
+install.packages("httr")
+install.packages("rvest")
+install.packages("stringr")

@@ -1,16 +1,10 @@
 source("R/get_followers_total.R")
 
-# influencers_profiles_dir <- "data/profiles.csv"
-# influencers_profiles <- read.csv(influencers_profiles_dir)
+influencers_df <- read.csv("data/profiles.csv", header = TRUE, stringsAsFactors = FALSE)
 
-# ids <- influencers_profiles[11:20, 2]
+IDs <- influencers_df$id
 
-# for (i in 1:10) {
-#   id <- ids[i]
-#   followers_total <- get_followers_total(id)
-#   save(followers_total, file = paste0("data/", id, ".rda"))
-# }
+for (id in IDs) {
+  get_followers_total(id)
+}
 
-id <- 2966061840
-
-followers_total <- get_followers_total(id)
