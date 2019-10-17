@@ -1,5 +1,3 @@
-source("R/get_followers.R")
-
 get_followers_total <- function(id) {
   
   # Initializing the values

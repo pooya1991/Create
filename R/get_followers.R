@@ -1,6 +1,3 @@
-source("R/utils.R")
-source("R/headers_handler.R")
-
 get_followers <- function(id, after, k, csrf_token) {
   
   # set the headers of follower request

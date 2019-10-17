@@ -1,7 +1,20 @@
 FROM rocker/r-base
 
-ARG WHEN
+RUN mkdir -p /getFollowers/data/followers
+RUN mkdir -p /getFollowers/R
 
-CMD R -e "source('/R/requirements.R')"
 
-CMD R -e "source('/R/GetFollowers.R')"
+COPY /R/get_followers.R /getFollowers/R/get_followers.R
+COPY /R/get_followers_total.R /getFollowers/R/get_followers_total.R
+COPY /R/headers_handler.R /getFollowers/R/headers_handler.R
+COPY /R/utils.R /getFollowers/R/utils.R
+COPY /R/requirements.R /getFollowers/R/requirements.R
+COPY /R/GetFollowers.R /getFollowers/R/GetFollowers.R
+
+COPY /data/export_h.csv /getFollowers/data/export_h.csv
+COPY /data/fake_users.csv /getFollowers/data/fake_users.csv
+COPY /data/profiles.csv /getFollowers/data/profiles.csv
+
+CMD R -e "source('/getFollowers/R/GetFollowers.R')"
+
+
