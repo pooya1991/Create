@@ -15,6 +15,10 @@ COPY /data/export_h.csv /getFollowers/data/export_h.csv
 COPY /data/fake_users.csv /getFollowers/data/fake_users.csv
 COPY /data/profiles.csv /getFollowers/data/profiles.csv
 
-CMD R -e "source('/getFollowers/R/GetFollowers.R')"
+RUN apt-get update && \
+      apt-get -y install sudo
+Run sudo apt-get install r-base-core libssl-dev libcurl4-openssl-dev
+
+CMD R -e "source('/getFollowers/R/GetFollowers.R')"ß
 
 
