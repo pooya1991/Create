@@ -52,8 +52,9 @@ get_followers_total <- function(id) {
       # Get the csrf token for getting follower service
       csrf_token <- follower_csrf()
       
-      if(t %% 10 == 0) {
-        Sys.sleep(300)
+      if(t %% 50 == 0) {
+        not_completed(id)
+        break()
       }
       
     } else {

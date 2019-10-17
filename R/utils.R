@@ -79,6 +79,14 @@ initialize_follower <- function(id) {
 
 
 
+# Not completed followers -------------------------------------------------
+
+not_completed <- function(id) {
+  followers_dist <- paste0("data/not_completed_followers.txt")
+  sink(followers_dist, append = TRUE)
+  cat(id)
+  sink()
+}
 
 
 
