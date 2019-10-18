@@ -1,10 +1,10 @@
-setwd("/getFollowers")
+setwd("/root/get_followers/cd-one")
 
-source('/getFollowers/R/requirements.R')
-source('/getFollowers/R/utils.R')
-source('/getFollowers/R/headers_handler.R')
-source('/getFollowers/R/get_followers.R')
-source('/getFollowers/R/get_followers_total.R')
+source('R/requirements.R')
+source('R/utils.R')
+source('R/headers_handler.R')
+source('R/get_followers.R')
+source('R/get_followers_total.R')
 
 influencers_df <- read.csv("data/profiles.csv", header = TRUE, stringsAsFactors = FALSE)
 

@@ -1,8 +1,3 @@
-library(httr)
-library(rvest)
-library(stringr)
-
-
 # Get login csrf token ----------------------------------------------------
 
 login_csrf <- function() {
